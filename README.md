@@ -20,7 +20,7 @@ LLM Inspector 需要 DeepSeek Harness Web 和 Node.js `^22.19.0 || >=24.0.0`。
 从 npm 安装发布版本：
 
 ```sh
-dsh plugin --profile web add dsh-llm-inspector
+dsh plugin --profile web add dsh-llm-capture
 ```
 
 在 npm 版本发布前，可以直接从 GitHub 安装：
@@ -38,7 +38,7 @@ dsh web
 需要卸载时执行：
 
 ```sh
-dsh plugin --profile web remove dsh-llm-inspector
+dsh plugin --profile web remove dsh-llm-capture
 ```
 
 ## 使用
@@ -62,7 +62,7 @@ tmp/llm-inspector-data/
 可以在 `$DSH_HOME/cordis.patch.yml` 中覆盖存储配置：
 
 ```yaml
-- id: llm-inspector
+- id: llm-capture
   config:
     directory: tmp/llm-inspector-data
     capacity: 500

@@ -28,7 +28,7 @@ import type {
   LlmLogListResult,
 } from './remote.js'
 
-export const name = 'llm-inspector'
+export const name = 'llm-capture'
 
 /** Host services used for persistence and debounced writes. */
 export const inject = ['fs', 'timer']
@@ -176,7 +176,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
       const target = await fs.resolve(fileName(sessionId))
       await fs.writeText(target, content)
     } catch (e) {
-      console.error('llm-inspector: flush failed', fileName(sessionId), e)
+      console.error('llm-capture: flush failed', fileName(sessionId), e)
     }
   }
   function loadOne(sessionId: string): Promise<void> {
@@ -315,5 +315,5 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
     for (const cancel of flushTimers.values()) cancel()
     flushTimers.clear()
     await Promise.all([...dirty].map(sessionId => flushOne(sessionId)))
-  }, 'llm-inspector.flush')
+  }, 'llm-capture.flush')
 }

@@ -1,5 +1,5 @@
 {
-  "name": "dsh-llm-inspector",
+  "name": "dsh-llm-capture",
   "version": "0.1.0",
   "description": "Inspect raw LLM requests and responses in DeepSeek Harness Web",
   "publishConfig": {

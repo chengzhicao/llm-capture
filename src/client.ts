@@ -18,12 +18,12 @@ import { LlmLogView, type LlmLogApi } from './view.js'
 import TYPERT_REMOTE from './remote.js'
 import { css } from './styles.js'
 
-export const name = 'llm-inspector'
+export const name = 'llm-capture'
 export const inject = ['slots', 'remote']
 
 export async function apply(ctx: Context): Promise<void> {
   const disposeRemote = await ctx.remote.$mount(TYPERT_REMOTE)
-  ctx.effect(() => disposeRemote, 'llm-inspector: Remote')
+  ctx.effect(() => disposeRemote, 'llm-capture: Remote')
 
   const style = typeof document === 'undefined' ? undefined : document.createElement('style')
   if (style !== undefined) {
@@ -32,7 +32,7 @@ export async function apply(ctx: Context): Promise<void> {
     document.head.append(style)
   }
   const disposeStyle = () => { style?.remove() }
-  if (typeof ctx.effect === 'function') ctx.effect(() => disposeStyle, 'llm-inspector: styles')
+  if (typeof ctx.effect === 'function') ctx.effect(() => disposeStyle, 'llm-capture: styles')
 
   ctx.inject(['slots', 'remote', 'remote.llmLog'], (viewCtx: Context) => {
     const api: LlmLogApi = {
@@ -55,7 +55,7 @@ export async function apply(ctx: Context): Promise<void> {
     viewCtx.slots.inject('conversation.view', () => viewCtx.slots.register(
       {
         name: 'conversation.view',
-        id: 'llm-inspector',
+        id: 'llm-capture',
         order: 20,
         label: () => 'LLM Inspector',
         inject: sessionId => ({ sessionId }),
