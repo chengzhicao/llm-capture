@@ -7,11 +7,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chengzhicao/llm-inspector.git"
+    "url": "git+https://github.com/chengzhicao/llm-capture.git"
   },
-  "homepage": "https://github.com/chengzhicao/llm-inspector#readme",
+  "homepage": "https://github.com/chengzhicao/llm-capture#readme",
   "bugs": {
-    "url": "https://github.com/chengzhicao/llm-inspector/issues"
+    "url": "https://github.com/chengzhicao/llm-capture/issues"
   },
   "keywords": [
     "deepseek-harness",

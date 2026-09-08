@@ -26,7 +26,7 @@ dsh plugin --profile web add dsh-llm-capture
 在 npm 版本发布前，可以直接从 GitHub 安装：
 
 ```sh
-dsh plugin --profile web add github:chengzhicao/llm-inspector
+dsh plugin --profile web add github:chengzhicao/llm-capture
 ```
 
 安装完成后启动 Web：
@@ -83,5 +83,5 @@ Host 插件监听 `llm/stream`，在不改变模型输出的前提下收集请�
 
 ## 项目地址
 
-- GitHub: <https://github.com/chengzhicao/llm-inspector>
-- Issues: <https://github.com/chengzhicao/llm-inspector/issues>
+- GitHub: <https://github.com/chengzhicao/llm-capture>
+- Issues: <https://github.com/chengzhicao/llm-capture/issues>
