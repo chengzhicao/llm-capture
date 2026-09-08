@@ -1,5 +1,5 @@
 /**
- * LLM Inspector —— Host 一半
+ * LLM Capture —— Host 一半
  * =========================
  * 职责：
  *   1. 订阅进程级 `llm/stream` 瀑布事件，捕获每次对大模型的请求与返回；

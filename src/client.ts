@@ -1,5 +1,5 @@
 /**
- * LLM Inspector —— Client 一半（浏览器 UI）入口
+ * LLM Capture —— Client 一半（浏览器 UI）入口
  * 职责：把"抓包视图"注册进 conversation.view（会话视图切换栏新增一项）。
  *
  * 这份是"插件 Client 侧"的 apply。真实 client 插件会经 tsdown 打成
@@ -57,7 +57,7 @@ export async function apply(ctx: Context): Promise<void> {
         name: 'conversation.view',
         id: 'llm-capture',
         order: 20,
-        label: () => 'LLM Inspector',
+        label: () => 'LLM Capture',
         inject: sessionId => ({ sessionId }),
       },
       (props: any) => h(LlmLogView, { sessionId: props.sessionId, api }),

@@ -1,8 +1,8 @@
-# LLM Inspector
+# LLM Capture
 
-LLM Inspector 是 DeepSeek Harness Web 的调用日志插件。它在会话页面增加独立的 `LLM Inspector` 标签页，用于查看模型请求、消息、返回内容、Token 用量、耗时和工具调用。
+LLM Capture 是 DeepSeek Harness Web 的调用日志插件。它在会话页面增加独立的 `LLM Capture` 标签页，用于查看模型请求、消息、返回内容、Token 用量、耗时和工具调用。
 
-![LLM Inspector 界面](docs/llm-inspector.png)
+![LLM Capture 界面](docs/llm-capture.png)
 
 ## 功能
 
@@ -15,7 +15,7 @@ LLM Inspector 是 DeepSeek Harness Web 的调用日志插件。它在会话页�
 
 ## 安装
 
-LLM Inspector 需要 DeepSeek Harness Web 和 Node.js `^22.19.0 || >=24.0.0`。
+LLM Capture 需要 DeepSeek Harness Web 和 Node.js `^22.19.0 || >=24.0.0`。
 
 从 npm 安装发布版本：
 
@@ -44,7 +44,7 @@ dsh plugin --profile web remove dsh-llm-capture
 ## 使用
 
 1. 打开或创建一个会话并发起模型调用。
-2. 点击会话顶部的 `LLM Inspector` 标签页。
+2. 点击会话顶部的 `LLM Capture` 标签页。
 3. 在左侧选择一次调用，在右侧查看请求、消息、返回或原文。
 4. 使用搜索框过滤当前 Session 的请求和返回内容。
 5. 点击“清空”会清除当前 Session 的内存记录，并将对应日志文件覆盖为空数组；其他 Session 不受影响。
@@ -54,7 +54,7 @@ dsh plugin --profile web remove dsh-llm-capture
 日志默认保存在启动 DSH 时的工作目录下：
 
 ```text
-tmp/llm-inspector-data/
+tmp/llm-capture-data/
 ```
 
 每个 Session 对应一个 JSON 文件。日志文件包含完整提示词、消息、工具参数和模型返回，请勿提交到版本库或发送给不受信任的第三方。
@@ -64,14 +64,14 @@ tmp/llm-inspector-data/
 ```yaml
 - id: llm-capture
   config:
-    directory: tmp/llm-inspector-data
+    directory: tmp/llm-capture-data
     capacity: 500
     flushDelayMs: 400
 ```
 
 | 配置项 | 默认值 | 说明 |
 | --- | --- | --- |
-| `directory` | `tmp/llm-inspector-data` | 日志目录；相对路径基于 DSH 的工作目录解析 |
+| `directory` | `tmp/llm-capture-data` | 日志目录；相对路径基于 DSH 的工作目录解析 |
 | `capacity` | `500` | 每个 Session 在内存和磁盘中保留的最大记录数 |
 | `flushDelayMs` | `400` | 合并连续磁盘写入的等待时间，单位为毫秒 |
 

@@ -1,5 +1,5 @@
 /**
- * LLM Inspector —— 浏览器 UI 样式
+ * LLM Capture —— 浏览器 UI 样式
  * 全部颜色取自 dsh 主题 token（--dsw-alias-*），亮/暗主题自适应。
  */
 

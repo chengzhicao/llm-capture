@@ -1,5 +1,5 @@
 /**
- * LLM Inspector —— 抓包式两栏视图（浏览器 UI）
+ * LLM Capture —— 抓包式两栏视图（浏览器 UI）
  * 左栏：单行可扫列表（含提示词摘要）；右栏：聚焦详情（Tab + JSON 树）。
  *
  * 数据来源：通过 host.call / ctx.remote 从 Host 拉取（真实插件用 Remote；
@@ -167,7 +167,7 @@ export function LlmLogView({ sessionId, api }: { sessionId?: string; api: LlmLog
   // 视为绝对覆盖层，由本视图自持滚动；滚动区 padding-bottom 预留输入框高度。
   return h('div', { className: 'llmlog', 'data-conversation-composer-overlay': '' },
     h('div', { className: 'llmlog-bar' },
-      h('b', null, 'LLM Inspector'),
+      h('b', null, 'LLM Capture'),
       h('input', { className: 'llmlog-input', placeholder: '搜索请求 / 返回全文…', value: query, onChange: (e) => setQuery(e.target.value) }),
       h('span', { className: 'llmlog-count' }, filtered.length + ' / ' + records.length + ' 条'),
       h('button', { className: 'llmlog-btn', onClick: () => load() }, '刷新'),

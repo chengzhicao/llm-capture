@@ -17,7 +17,7 @@
     "deepseek-harness",
     "dsh",
     "llm",
-    "inspector",
+    "capture",
     "plugin"
   ],
   "type": "module",

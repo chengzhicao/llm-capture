@@ -2,4 +2,4 @@
     - id: llm-capture
       name: dsh-llm-capture
       config:
-        directory: tmp/llm-inspector-data
+        directory: tmp/llm-capture-data
