@@ -21,7 +21,7 @@ export default defineConfig([
     deps: { alwaysBundle: ['zod'] },
     outputOptions: {
       entryFileNames: 'client.js',
-      banner: 'window.__ModuleLoader__.load({ id: "llm-inspector", factory: (require) => {',
+      banner: 'window.__ModuleLoader__.load({ id: "dsh-llm-inspector", factory: (require) => {',
       footer: 'return module.exports; } });',
       intro: 'var module = { exports: {} }; var exports = module.exports;',
     },

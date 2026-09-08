@@ -1,5 +1,5 @@
 - insert:
     - id: llm-inspector
-      name: llm-inspector
+      name: dsh-llm-inspector
       config:
-        directory: tmp/llm-log-data
+        directory: tmp/llm-inspector-data

@@ -30,7 +30,7 @@ const clearResultSchema = z.object({ cleared: z.boolean() })
 
 const descriptors: TypertRemoteContribution['descriptors'] = [
   {
-    id: 'llm-inspector#llmLog/list',
+    id: 'dsh-llm-inspector#llmLog/list',
     service: 'llmLog',
     namespace: 'llmLog',
     method: 'list',
@@ -39,12 +39,12 @@ const descriptors: TypertRemoteContribution['descriptors'] = [
       name: 'request',
       wire: 'request',
       source: 'json',
-      codec: { mode: 'strict', typeSymbol: 'llm-inspector#LlmLogListRequest', schema: requestSchema },
+      codec: { mode: 'strict', typeSymbol: 'dsh-llm-inspector#LlmLogListRequest', schema: requestSchema },
     }],
-    result: { mode: 'strict', typeSymbol: 'llm-inspector#LlmLogListResult', schema: listResultSchema },
+    result: { mode: 'strict', typeSymbol: 'dsh-llm-inspector#LlmLogListResult', schema: listResultSchema },
   },
   {
-    id: 'llm-inspector#llmLog/clear',
+    id: 'dsh-llm-inspector#llmLog/clear',
     service: 'llmLog',
     namespace: 'llmLog',
     method: 'clear',
@@ -53,14 +53,14 @@ const descriptors: TypertRemoteContribution['descriptors'] = [
       name: 'request',
       wire: 'request',
       source: 'json',
-      codec: { mode: 'strict', typeSymbol: 'llm-inspector#LlmLogClearRequest', schema: requestSchema },
+      codec: { mode: 'strict', typeSymbol: 'dsh-llm-inspector#LlmLogClearRequest', schema: requestSchema },
     }],
-    result: { mode: 'strict', typeSymbol: 'llm-inspector#LlmLogClearResult', schema: clearResultSchema },
+    result: { mode: 'strict', typeSymbol: 'dsh-llm-inspector#LlmLogClearResult', schema: clearResultSchema },
   },
 ]
 
 export const TYPERT_REMOTE: TypertRemoteContribution = {
-  package: 'llm-inspector',
+  package: 'dsh-llm-inspector',
   descriptors,
 }
 
