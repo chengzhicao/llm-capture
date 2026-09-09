@@ -17,14 +17,6 @@ LLM Capture 是 DeepSeek Harness Web 的调用日志插件。它在会话页面�
 
 LLM Capture 需要 DeepSeek Harness Web 和 Node.js `^22.19.0 || >=24.0.0`。
 
-从 npm 安装发布版本：
-
-```sh
-dsh plugin --profile web add dsh-llm-capture
-```
-
-在 npm 版本发布前，可以直接从 GitHub 安装：
-
 ```sh
 dsh plugin --profile web add github:chengzhicao/llm-capture
 ```
@@ -80,8 +72,3 @@ tmp/llm-capture-data/
 ## 工作方式
 
 Host 插件监听 `llm/stream`，在不改变模型输出的前提下收集请求和流式返回，并按 Session 写入 JSON 文件。Web Client 通过 `llmLog` Remote 接口读取和清空记录，不直接访问主机文件系统。
-
-## 项目地址
-
-- GitHub: <https://github.com/chengzhicao/llm-capture>
-- Issues: <https://github.com/chengzhicao/llm-capture/issues>
