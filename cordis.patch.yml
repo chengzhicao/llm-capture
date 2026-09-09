@@ -2,4 +2,4 @@
     - id: llm-capture
       name: dsh-llm-capture
       config:
-        directory: tmp/llm-capture-data
+        directory: !!js dshHomePath('llm-capture-data')

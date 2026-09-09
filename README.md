@@ -43,11 +43,13 @@ dsh plugin --profile web remove dsh-llm-capture
 
 ## 日志存储
 
-日志默认保存在启动 DSH 时的工作目录下：
+日志默认保存在 DSH 的用户数据目录下，不随启动命令所在目录变化：
 
 ```text
-tmp/llm-capture-data/
+$DSH_HOME/llm-capture-data/
 ```
+
+未设置 `DSH_HOME` 时，DSH 会使用默认 Harness home（通常为 `~/.dsh`）。
 
 每个 Session 对应一个 JSON 文件。日志文件包含完整提示词、消息、工具参数和模型返回，请勿提交到版本库或发送给不受信任的第三方。
 
@@ -56,18 +58,18 @@ tmp/llm-capture-data/
 ```yaml
 - id: llm-capture
   config:
-    directory: tmp/llm-capture-data
+    directory: !!js dshHomePath('llm-capture-data')
     capacity: 500
     flushDelayMs: 400
 ```
 
 | 配置项 | 默认值 | 说明 |
 | --- | --- | --- |
-| `directory` | `tmp/llm-capture-data` | 日志目录；相对路径基于 DSH 的工作目录解析 |
+| `directory` | `dshHomePath('llm-capture-data')` | 日志目录；默认位于 `$DSH_HOME`，相对路径仍基于 DSH 的工作目录解析 |
 | `capacity` | `500` | 每个 Session 在内存和磁盘中保留的最大记录数 |
 | `flushDelayMs` | `400` | 合并连续磁盘写入的等待时间，单位为毫秒 |
 
-修改配置后重启 DSH 生效。插件不会自动迁移自定义目录中的旧日志。
+修改配置后重启 DSH 生效。默认目录调整后，旧的 `tmp/llm-capture-data` 不会自动迁移；如需保留旧日志，请手动移动到 `$DSH_HOME/llm-capture-data`。插件不会自动迁移自定义目录中的旧日志。
 
 ## 工作方式
 
